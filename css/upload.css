@@ -1,0 +1,127 @@
+/*
+    /// Paleta de Colores: ///
+    Fondo: #031230
+    Texto: #e0e3e8
+    Titulo: #80efeb
+    Botones / Enlaces: #2380be
+    Frames: #0a1f4d
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Comic Sans MS";
+}
+
+body {
+    background-color: #031230;
+    color: #e0e3e8;
+    font-size: 22px;
+}
+
+main * {
+    text-align: center;
+}
+
+header {
+    background-color: #0a1f4d;
+    padding: 40px;
+    margin: 30px 60px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+header * {
+    display: inline-block;
+}
+
+header > p {
+    width: 49%;
+    text-align: left;
+}
+
+nav {
+    width: 49%;
+    text-align: right;
+}
+
+header nav * {
+    padding: 0 20px;
+}
+
+section {
+    background-color: #0a1f4d;
+    padding: 40px;
+    margin: 30px 60px;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #80efeb;
+}
+
+article {
+    text-align: center;
+}
+
+.bigbutt {
+    background-color: #2380be;
+    color: white;
+    text-decoration: none;
+    padding: 200px 150px;
+    border-radius: 10px;
+    margin: 20px 20%;
+    text-align: center;
+    font-size: xx-large;
+    border: none;
+}
+
+#upload {
+    padding: 20px 200px; 
+    margin: 20px 33%;
+}
+
+.button {
+    background-color: #2380be;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+header .button {
+    background-color: #2380be;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+#fileblk {
+
+    display: inline-block;
+
+}
+
+#typeblk {
+
+    margin: 500px;
+    padding: 0;
+
+}
+
+.fileup * {
+
+        padding: 10px;
+        margin: 5px;
+        display: inline-block;
+        vertical-align: middle;
+
+}
+
+h2 {
+
+    color: #2380be;
+    font-size: 22px;
+
+}
