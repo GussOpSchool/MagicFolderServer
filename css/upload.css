@@ -1,127 +1,304 @@
-/*
-    /// Paleta de Colores: ///
-    Fondo: #031230
-    Texto: #e0e3e8
-    Titulo: #80efeb
-    Botones / Enlaces: #2380be
-    Frames: #0a1f4d
-*/
+/* -------------------- DEFAULTS -------------------- */
+
+:root {
+    --background: #b3c6e6;
+    --text: #1a3656;
+    --title: #003a7c;
+    --button: #5989c0;
+    --frame: #8ea9d9;
+}
 
 * {
     margin: 0;
     padding: 0;
     font-family: "Comic Sans MS";
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #031230;
-    color: #e0e3e8;
+    background-color: var(--background);
+    color: var(--text);
     font-size: 22px;
 }
 
-main * {
-    text-align: center;
-}
-
-header {
-    background-color: #0a1f4d;
-    padding: 40px;
-    margin: 30px 60px;
-    border-radius: 15px;
-    text-align: left;
-}
-
-header * {
-    display: inline-block;
-}
-
-header > p {
-    width: 49%;
-    text-align: left;
-}
-
-nav {
-    width: 49%;
-    text-align: right;
-}
-
-header nav * {
+main {
     padding: 0 20px;
 }
 
+h2,
+.fileinfo label {
+    color: var(--title);
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 section {
-    background-color: #0a1f4d;
+    background-color: var(--frame);
     padding: 40px;
-    margin: 30px 60px;
+    margin: 0px 20px;
+    margin-bottom: 30px;
     border-radius: 15px;
-}
-
-h1 {
-    text-align: center;
-    color: #80efeb;
-}
-
-article {
-    text-align: center;
+    min-height: 500px;
+    display: block;
 }
 
 .bigbutt {
-    background-color: #2380be;
-    color: white;
-    text-decoration: none;
-    padding: 200px 150px;
+    display: block;
+    background-color: var(--frame);
+    width: 90%;
+    height: 150px;
     border-radius: 10px;
-    margin: 20px 20%;
+    margin: 20px auto;
+    border: 3px solid var(--background);
+    box-shadow: 7px 7px var(--button);
+    color: var(--text);
+    font-size: 24px;
     text-align: center;
-    font-size: xx-large;
-    border: none;
+    line-height: 150px;
+    cursor: pointer;
 }
 
-#upload {
-    padding: 20px 200px; 
-    margin: 20px 33%;
+.bigbutt:hover {
+    height: 160px;
+    width: 95%;
 }
 
 .button {
-    background-color: #2380be;
-    text-decoration: none;
-    padding: 5px 20px;
-    border-radius: 10px;
-}
-
-header .button {
-    background-color: #2380be;
-    text-decoration: none;
-    padding: 5px 20px;
-    border-radius: 10px;
-    margin-left: 20px;
-}
-
-#fileblk {
-
     display: inline-block;
-
+    background-color: var(--button);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 22px;
+    cursor: pointer;
+    margin: 20px 25%;
 }
 
-#typeblk {
-
-    margin: 500px;
-    padding: 0;
-
+.button:hover {
+    padding: 12px 23px;
 }
 
-.fileup * {
+/* HEADER */
+header {
+    background-color: var(--frame);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: left;
+    position: relative;
+    height: 140px;
+}
 
-        padding: 10px;
-        margin: 5px;
+header img#logo {
+    height: 100px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+header h1 {
+    display: none;
+    color: var(--title);
+    font-size: 32px;
+    line-height: 100px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+header nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--frame);
+    z-index: 1000;
+    padding-top: 100px;
+    text-align: center;
+}
+
+header nav.show {
+    display: block;
+}
+
+#quickoptions a,
+#quickoptions .button {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#closebutt {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#morebutt {
+    height: 40px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    display: block;
+}
+
+/*----------------------------------------------------*/
+
+.filesym {
+    position: relative;
+    display: block;
+    margin: 25px 10px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.fileup h2 {
+    display: inline-block;
+    margin-left: 25%;
+}
+
+.fileup p {
+    width: auto;
+    margin-left: 25px;
+    display: inline-block;
+    text-align: center;
+}
+
+select {
+    display: inline-block;
+    background-color: var(--button);
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.fileinfo label {
+    margin-left: 25%;
+}
+
+/* -------------------- RESPONSIVENESS -------------------- */
+
+/* TABLET */
+@media (min-width: 577px) {
+
+    #morebutt {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 40px;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+        z-index: 1;
+        text-align: right;
+    }
+
+    #quickoptions a,
+    #quickoptions .button {
+        display: inline-block;
+        width: auto;
+        margin: 0 10px;
+        font-size: 22px;
+    }
+
+    #closebutt {
+        display: none;
+    }
+
+    .filesym {
+        display: inline-block;
+        margin: 25px 20px;
+        transform: translate(0);
+        left: 0;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .fileinfo {
         display: inline-block;
         vertical-align: middle;
+    }
+
+    .fileup h2,
+    .fileup p {
+        display: block;
+        width: auto;
+        margin: 20px;
+    }
+
+    .fileup label {
+        margin-left: 0;
+    }
+
+    select {
+        display: block;
+    }
+
+    section {
+        text-align: center;
+    }
 
 }
 
-h2 {
 
-    color: #2380be;
-    font-size: 22px;
+/* DESKTOP */
+@media (min-width: 1025px) {
+
+    header h1 {
+        display: inline-block;
+    }
+
+    main {
+        font-size: 0;
+    }
+
+    main>* {
+        font-size: 22px;
+    }
+
+    .fileup h2 {
+        display: inline-block;
+    }
+
+    .fileup p {
+        display: inline-block;
+    }
+
+    .fileup label {
+        width: 48%;
+    }
+
+    select {
+        display: inline-block;
+    }
+
+    .bigbutt {
+        width: 60%;
+    }
+
+    .bigbutt:hover {
+        width: 65%;
+    }
 
 }
+
+/* ------------------------------------------------------- */

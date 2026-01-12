@@ -35,12 +35,12 @@ label {
 }
 
 section {
-    text-align: center;
+    text-align: left;
     background-color: var(--frame);
     padding: 40px;
     margin-bottom: 30px;
-    margin: 0 20px;
     border-radius: 15px;
+    width: 100%;
     min-height: 500px;
     display: block;
 }
@@ -154,11 +154,36 @@ header nav.show {
 
 /*----------------------------------------------------*/
 
-.subtitle {
+h2 {
+    text-align: left;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+
+.foldersect div {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.foldersect label,
+#date {
+    display: block;
     font-size: 22px;
-    width: 55%;
-    margin: 20px auto;
-    text-align: center;
+    width: auto;
+}
+
+.foldersect label {
+    display: none;
+}
+
+.foldersect {
+    margin-bottom: 40px;
+    height: auto;
+    position: relative;
 }
 
 main .button {
@@ -237,6 +262,25 @@ aside li {
         font-size: 22px;
     }
 
+    section {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 2%;
+        margin-bottom: 0;
+    }
+
+    .foldersect label,
+    #date {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    aside {
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin-bottom: 0;
+    }
 }
 
 /* ------------------------------------------------------- */

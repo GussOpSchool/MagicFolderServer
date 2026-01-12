@@ -25,22 +25,20 @@ main {
     padding: 0 20px;
 }
 
-h2,
-label {
-    font-weight: bold;
+h2 {
     color: var(--title);
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-section {
-    text-align: center;
+section,
+aside {
     background-color: var(--frame);
     padding: 40px;
     margin-bottom: 30px;
-    margin: 0 20px;
     border-radius: 15px;
+    width: 100%;
     min-height: 500px;
     display: block;
 }
@@ -154,22 +152,11 @@ header nav.show {
 
 /*----------------------------------------------------*/
 
-.subtitle {
-    font-size: 22px;
-    width: 55%;
-    margin: 20px auto;
-    text-align: center;
-}
 
-main .button {
-    display: inline-block;
-    padding: 10px;
-    margin: 20px 10px;
-    width: auto;
-}
-
-.foldersect * {
-    width: auto;
+.filesym {
+    display: block;
+    margin: 25px auto 0 auto;
+    width: 200px;
 }
 
 aside ul {
@@ -216,11 +203,18 @@ aside li {
         display: none;
     }
 
-    .foldersect label {
-        display: block;
+    .filesym {
+        display: inline-block;
+        margin: 25px 10px;
+        width: 200px;
+    }
+
+    section {
+        text-align: center;
     }
 
 }
+
 
 /* DESKTOP */
 @media (min-width: 1025px) {
@@ -237,6 +231,20 @@ aside li {
         font-size: 22px;
     }
 
+    section {
+        display: inline-block;
+        vertical-align: top;
+        width: 65%;
+        margin-right: 2%;
+        margin-bottom: 0;
+    }
+
+    aside {
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin-bottom: 0;
+    }
 }
 
 /* ------------------------------------------------------- */
