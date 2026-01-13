@@ -8,22 +8,23 @@ async function loadFiles() {
     articles.forEach(article => article.remove());
 
     try {
-        const response = await fetch("http://127.0.0.1:5501/files");
+        const response = await fetch("http://127.0.0.1:8000/files");
         const data = await response.json();
 
         if (data.files && data.files.length > 0) {
-            data.files.forEach(filename => {
+            data.files.forEach(fileObj => {
                 const article = document.createElement("article");
                 article.className = "foldersect";
 
-                // Using generic date as requested
-                const dateStr = "xx/xx/2026";
+                // Use date from server
+                const dateStr = fileObj.date || "Unknown Date";
+                const filename = fileObj.name;
 
                 // Link to download/view file
-                const fileUrl = `http://127.0.0.1:5501/uploads/${filename}`;
+                const fileUrl = `http://127.0.0.1:8000/uploads/${filename}`;
 
                 article.innerHTML = `
-                    <a class="button" href="${fileUrl}" target="_blank">${filename}</a>
+                    <a class="button" href="${fileUrl}" download="${filename}">${filename}</a>
                     <div>
                         <label>Fecha de Creación:</label>
                         <p id="date">${dateStr}</p>

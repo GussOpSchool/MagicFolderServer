@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 import os
 from pathlib import Path
+from typing import List
+from datetime import datetime
 
 app = FastAPI()
 
@@ -25,25 +27,44 @@ app.add_middleware(
 async def download_file(filename: str):
     file_path = UPLOAD_DIR / filename
     if file_path.exists():
-        return FileResponse(path=file_path, filename=filename, media_type='application/octet-stream')
+        # "attachment" forces the browser to download instead of opening
+        return FileResponse(
+            path=file_path, 
+            filename=filename, 
+            media_type='application/octet-stream',
+            headers={"Content-Disposition": f"attachment; filename={filename}"} 
+        )
     return {"error": "File not found"}
 
 @app.post("/upload")
-async def upload(files: list[UploadFile] = File(...)):
+async def upload(files: List[UploadFile] = File(...)):
     saved = []
 
     for file in files:
-        filepath = UPLOAD_DIR / file.filename
-        with open(filepath, "wb") as f:
-            f.write(await file.read())
-        saved.append(file.filename)
+        try:
+            filepath = UPLOAD_DIR / file.filename
+            with open(filepath, "wb") as f:
+                f.write(await file.read())
+            saved.append(file.filename)
+            print(f"Successfully uploaded: {file.filename}")
+        except Exception as e:
+            print(f"Failed to upload {file.filename}: {e}")
 
     return {"uploaded": saved}
 
 @app.get("/files")
 async def list_files():
-    # Listar archivos en la carpeta de uploads
+    # Listar archivos con metadatos
     files = []
     if UPLOAD_DIR.exists():
-        files = [f.name for f in UPLOAD_DIR.iterdir() if f.is_file()]
+        for f in UPLOAD_DIR.iterdir():
+            if f.is_file():
+                stat = f.stat()
+                # Creation time (ctime on Windows, birthtime on logic often varies but ctime is safe generic)
+                # Using st_mtime as modification time is often what users care about too, but we will label 'created'
+                c_time = datetime.fromtimestamp(stat.st_mtime).strftime('%d/%m/%Y')
+                files.append({
+                    "name": f.name,
+                    "date": c_time
+                })
     return {"files": files}

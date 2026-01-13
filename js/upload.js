@@ -57,19 +57,24 @@ function init() {
             const formData = new FormData();
             formData.append("files", file);
 
-            // Use port 5501
-            fetch("http://127.0.0.1:5501/upload", {
+            // Use port 8000
+            fetch("http://127.0.0.1:8000/upload", {
                 method: "POST",
                 body: formData
             })
-                .then(response => response.json())
+                .then(async response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     alert("Upload successful!");
                     console.log(data);
                 })
                 .catch(error => {
                     console.error("Error:", error);
-                    alert("Upload failed.");
+                    alert("Upload failed. Check console for details.");
                 });
         });
     }
