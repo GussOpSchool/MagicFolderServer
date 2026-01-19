@@ -58,7 +58,7 @@ function init() {
             formData.append("files", file);
 
             // Use port 8000
-            fetch("http://127.0.0.1:8000/upload", {
+            fetch("http://100.115.86.26:8000/upload", {
                 method: "POST",
                 body: formData
             })
@@ -81,3 +81,4 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
