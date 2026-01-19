@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 import os
@@ -37,7 +37,7 @@ async def download_file(filename: str):
     return {"error": "File not found"}
 
 @app.post("/upload")
-async def upload(files: List[UploadFile] = File(...)):
+async def upload(files: List[UploadFile] = Form(...)):
     saved = []
 
     for file in files:
