@@ -46,13 +46,13 @@ section {
 
 .bigbutt {
     display: block;
-    background-color: var(--frame);
+    background-color: var(--button);
     width: 90%;
     height: 150px;
     border-radius: 10px;
     margin: 20px auto;
     border: 3px solid var(--background);
-    box-shadow: 7px 7px var(--button);
+    box-shadow: 7px 7px var(--text);
     color: var(--text);
     font-size: 24px;
     text-align: center;
@@ -127,11 +127,21 @@ header nav.show {
 
 #quickoptions a,
 #quickoptions .button {
+    color: var(--text);
+    text-decoration: none;
     display: block;
     margin: 20px auto;
     width: 80%;
     font-size: 28px;
     cursor: pointer;
+}
+
+#quickoptions a:hover {
+    font-size: 26px;
+}
+
+#quickoptions .button:hover {
+    font-size: 22px;
 }
 
 #closebutt {

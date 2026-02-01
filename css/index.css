@@ -1,0 +1,58 @@
+/*
+    /// Paleta de Colores: ///
+    Fondo: #031230
+    Texto: #e0e3e8
+    Titulo: #80efeb
+    Botones / Enlaces: #2380be
+    Frames: #0a1f4d
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #031230;
+    color: #e0e3e8;
+    font-family: "Comic Sans MS";
+    font-size: 22px;
+}
+
+main * {
+    text-align: center;
+}
+
+header {
+    background-color: #0a1f4d;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+header * {
+    display: inline-block;
+}
+
+header > p {
+    width: 49%;
+    text-align: left;
+}
+
+nav {
+    width: 49%;
+    text-align: right;
+}
+
+header nav * {
+    padding: 0 20px;
+}
+
+.button {
+    background-color: #2380be;
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+}

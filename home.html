@@ -9,11 +9,11 @@
 
 <body>
     <header>
-        <img src="img/LogoLight.png" id="logo">
+        <a href="home.html"><img src="img/LogoLight.png" id="logo"></a>
         <h1>Magic Folder</h1>
         <nav id="quickoptions">
-            <a>About</a>
-            <a>FAQ</a>
+            <a href="#abt">About</a>
+            <a href="#faq">FAQ</a>
             <a href="views/dashboard.html" class="button">Try now!</a>
             <img id="closebutt" src="img/closesym.png">
         </nav>
@@ -29,7 +29,54 @@
         </p>
         <div class="bigbutt"><a href="views/dashboard.html">Try now!</a></div>
     </section>
+    <section>
+        <h2>Features</h2>
+        <p>Magic Folder Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quisquam autem temporibus fugiat dolores odit sequi hic quibusdam ipsum facilis!</p>
+        <article class="carrousel">
+            <img src="img/organize.jpg">
+            <p>Magic Folder Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </article>
+        <article class="carrousel">
+            <img src="img/devices.png">
+            <p>Magic Folder Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </article>
+        <article class="carrousel">
+            <img src="img/connection.png">
+            <p>Magic Folder Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </article>
+    </section>
+    <section>
+        <h2 id="abt">About Magic Folder</h2>
+        <p>In magic folder you can organize and access all of your files anywhere through a personal cloud service:</p>
+        <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        </ul>
+        <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="faq">Frequently Asked Questions (FAQ)</h2>
+        <article class="question">
+            <input type="checkbox" id="checkquest1">
+            <label for="checkquest1" class="openquest">▼ Qué hace Magic Folder diferente de otros servicios "cloud"?</label>
+            <article class="answer"><p>Magic Folder te permite guardar archivos directamente a tus dispositivos personales desde cualquier lugar</p></article>
+        </article>
+        <article class="question">
+            <input type="checkbox" id="checkquest2">
+            <label for="checkquest2" class="openquest">▼ Cómo se usa Magic Folder?</label>
+            <article class="answer"><p>Puedes instalar el proyecto desde github y utilizar el mismo html para controlar tu servidor de archivos</p></article>
+        </article>
+        <article class="question">
+            <input type="checkbox" id="checkquest3">
+            <label for="checkquest3" class="openquest">▼ Mis dispositivos no pueden comunicarse. Cómo corregirlo?</label>
+            <article class="answer"><p>Debes tener todos los dispositivos permitidos y conectados con tailscale y esta viene juntamente con el servidor para instalarse</p></article>
+        </article>
+    </section>
 
+    <script src="../js/menubutt.js"></script>
 </body>
 
 </html>

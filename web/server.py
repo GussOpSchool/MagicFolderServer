@@ -16,7 +16,7 @@ UPLOAD_DIR.mkdir(exist_ok=True)
 # 🌍 Permitir que tu HTML llame al servidor
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # si quieres puedes limitarlo a tu IP de tailscale
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

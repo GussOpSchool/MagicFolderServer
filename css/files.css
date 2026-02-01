@@ -128,6 +128,8 @@ header nav.show {
 
 #quickoptions a,
 #quickoptions .button {
+    color: var(--text);
+    text-decoration: none;
     display: block;
     margin: 20px auto;
     width: 80%;
@@ -234,6 +236,14 @@ aside li {
         display: inline-block;
         width: auto;
         margin: 0 10px;
+        font-size: 22px;
+    }
+
+    #quickoptions a:hover {
+        font-size: 26px;
+    }
+
+    #quickoptions .button:hover {
         font-size: 22px;
     }
 

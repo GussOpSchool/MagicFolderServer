@@ -44,14 +44,14 @@ aside {
 }
 
 .bigbutt {
-    background-color: var(--frame);
-    width: 90%;
+    background-color: var(--button);
+    width: 70%;
     height: 150px;
     border-radius: 10px;
     margin: 20px auto;
     text-align: center;
     border: 3px solid var(--background);
-    box-shadow: 7px 7px var(--button);
+    box-shadow: 7px 7px var(--text);
     display: block;
     position: relative;
 }
@@ -66,6 +66,11 @@ aside {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+}
+
+.bigbutt:hover {
+    width: 75%;
+    height: 170px;
 }
 
 .button {
@@ -126,11 +131,21 @@ header nav.show {
 
 #quickoptions a,
 #quickoptions .button {
+    color: var(--text);
+    text-decoration: none;
     display: block;
     margin: 20px auto;
     width: 80%;
     font-size: 28px;
     cursor: pointer;
+}
+
+#quickoptions a:hover {
+    font-size: 26px;
+}
+
+#quickoptions .button:hover {
+    font-size: 22px;
 }
 
 #closebutt {
